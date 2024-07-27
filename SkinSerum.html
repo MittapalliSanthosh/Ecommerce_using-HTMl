@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skin Serum</title>
+    <script
+      src="https://kit.fontawesome.com/0ee0e9e40e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="Beauty SkinSerum.css" />
+  </head>
+
+  <body>
+    <section class="products">
+      <div class="all-products">
+        <div class="product-card" id="skin-serum">
+          <div class="badge">Hot</div>
+          <div class="product-tumb">
+            <img src="Beauty Images/lakmeserum.jpg" alt="Skin Serum" />
+          </div>
+          <div class="product-details">
+            <span class="product-catagory">Skin-Serum</span>
+            <h4><a href="">LAKME</a></h4>
+            <p>Skin Sculpting Serum 30ml</p>
+            <div class="product-bottom-details">
+              <div class="product-price">
+                Rs. 499<small>Rs. 999</small><small>(50%OFF)</small>
+              </div>
+              <div class="product-links">
+                <a href="" class="icon-link"><i class="fa fa-heart"></i></a>
+                <a href="" class="icon-link"
+                  ><i class="fa fa-shopping-cart"></i
+                ></a>
+                <a href="Buynowpage.html" target="_self" class="buy-now-button"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-card" id="skin-serum">
+          <div class="product-tumb">
+            <img src="Beauty Images/hydro.jpg" alt="Skin Serum" />
+          </div>
+          <div class="product-details">
+            <span class="product-catagory">Skin-Serum</span>
+            <h4><a href="">Revolution</a></h4>
+            <p>Make-up Revolution Lond...(50ml)</p>
+            <div class="product-bottom-details">
+              <div class="product-price">
+                Rs.1100<small>Rs.2200</small><small>(50%OFF)</small>
+              </div>
+              <div class="product-links">
+                <a href="" class="icon-link"><i class="fa fa-heart"></i></a>
+                <a href="" class="icon-link"
+                  ><i class="fa fa-shopping-cart"></i
+                ></a>
+                <a class="buy-now-button">Buy Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-card" id="skin-serum">
+          <div class="badge">Hot</div>
+          <div class="product-tumb">
+            <img src="Beauty Images/lorealserum.jpg" alt="Skin Serum" />
+          </div>
+          <div class="product-details">
+            <span class="product-catagory">Skin-Serum</span>
+            <h4><a href="">LOreal</a></h4>
+            <p>Glycolic Bright Serum-30ml</p>
+            <div class="product-bottom-details">
+              <div class="product-price">
+                Rs. 524<small>Rs. 749</small><small>(30%OFF)</small>
+              </div>
+              <div class="product-links">
+                <a href="" class="icon-link"><i class="fa fa-heart"></i></a>
+                <a href="" class="icon-link"
+                  ><i class="fa fa-shopping-cart"></i
+                ></a>
+                <a class="buy-now-button">Buy Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      const menLink = document.querySelector(".menu-item .dropdown-btn");
+
+      // Get the content to be displayed
+      const contentToDisplay = document.querySelector(".products");
+
+      // Add a click event listener
+      menLink.addEventListener("click", function (event) {
+        // Prevent the default link behavior
+        event.preventDefault();
+
+        // Show the content
+        contentToDisplay.style.display = "block";
+
+        // Scroll to the products section
+        contentToDisplay.scrollIntoView({ behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>

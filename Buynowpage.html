@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BUY NOW</title>
+    <link rel="stylesheet" href="Buynowpage.css" />
+  </head>
+
+  <body>
+    <div class="content">
+      <nav>
+        <a href="#" class="menu">Menu</a>
+        <h1 class="logo">ECOMMERCE</h1>
+        <div class="icons">
+          <i class="fas fa-search"></i>
+          <i class="fas fa-shopping-bag"></i
+          ><span style="margin-left: 0.3rem">1</span>
+        </div>
+      </nav>
+      <div class="top-bar">
+        <a href="Beauty.html">
+          <i class="fas fa-arrow-left"></i>
+          <span>Continue shopping</span>
+        </a>
+      </div>
+      <div class="bag">
+        <p class="bag-head">
+          <span style="text-transform: uppercase">Your Bag</span> - 1 item
+        </p>
+      </div>
+      <div class="bag-product">
+        <div class="image">
+          <img
+            id="main-image"
+            src="Beauty Images/lakmeserum.jpg"
+            class="product-image"
+            onclick="resetMainImage()"
+          />
+        </div>
+        <div class="description">
+          <p class="product-code small muted">Product code: SS022592000</p>
+          <h1>LAKME</h1>
+          <p>Skin Serum</p>
+          <p class="description-text">Skin Sculpting Serum 30ml</p>
+          <p style="margin-bottom: 0.5rem">One Piece</p>
+          <h2>Rs. 660</h2>
+          <div class="quantity-wrapper">
+            <div>
+              <label for="quantity" style="margin-right: 0.5rem"
+                >Quantity:</label
+              >
+              <select
+                id="quantity"
+                name="quantity"
+                style="margin-bottom: 1rem"
+                onchange="updateTotalPrice()"
+              >
+                <option value disabled>Please select</option>
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+            <button class="btn-remove" onclick="removeItem()">Remove</button>
+          </div>
+          <div class="sub-images">
+            <img
+              id="sub-image-1"
+              src="Beauty Images/lakmeserumsub1.jpg"
+              class="sub-image"
+              onclick="updateMainImage('Beauty Images/lakmeserumsub1.jpg')"
+            />
+            <img
+              id="sub-image-2"
+              src="Beauty Images/lakmeserumsub2.jpg"
+              class="sub-image"
+              onclick="updateMainImage('Beauty Images/lakmeserumsub2.jpg')"
+            />
+            <img
+              id="sub-image-3"
+              src="Beauty Images/lakmeserumsub3.jpg"
+              class="sub-image"
+              onclick="updateMainImage('Beauty Images/lakmeserumsub3.jpg')"
+            />
+            <img
+              id="sub-image-4"
+              src="Beauty Images/lakmeserumsub4.jpg"
+              class="sub-image"
+              onclick="updateMainImage('Beauty Images/lakmeserumsub4.jpg')"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="bag-total">
+        <div class="subtotal">
+          <p class="small">Subtotal:</p>
+          <p id="subtotal-value" class="small">Rs. 660.00</p>
+        </div>
+        <div class="delivery">
+          <p class="small">
+            Delivery (Standard - 2 working days):<br />
+            <span class="change-delivery">Change delivery method</span>
+          </p>
+          <p class="small">Free</p>
+        </div>
+        <div class="total">
+          <h3>Total:</h3>
+          <h3 id="total-value">Rs. 660.00</h3>
+        </div>
+        <div class="promo-checkbox">
+          <input type="checkbox" name="promo-check" checked />
+          <label for="promo-check">I have a promo code</label>
+        </div>
+        <div class="promo-code">
+          <input
+            id="promo-input"
+            type="text"
+            name="promo-checkbox"
+            placeholder="Enter your promo code here"
+          />
+          <button class="apply" onclick="applyPromoCode()">Apply</button>
+        </div>
+        <button class="btn-go-checkout">
+          <i class="fas fa-lock"></i>
+          <span><a href="payment.html" target="_self">Go to Checkout</a></span>
+        </button>
+      </div>
+      <div class="help">
+        <p>Need help? Call free 01234 567 890</p>
+      </div>
+    </div>
+    <div class="bg"></div>
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"
+    />
+
+    <script>
+      var originalMainImage = "Beauty Images/lakmeserum.jpg";
+
+      function updateMainImage(newImage) {
+        var mainImage = document.getElementById("main-image");
+        mainImage.src = newImage;
+      }
+
+      function resetMainImage() {
+        var mainImage = document.getElementById("main-image");
+        mainImage.src = originalMainImage;
+      }
+
+      var originalPrice = 660; // The original price of the product
+      var currentQuantity = 1; // The initial selected quantity
+
+      function updateTotalPrice() {
+        var selectedQuantity = parseInt(
+          document.getElementById("quantity").value
+        );
+        currentQuantity = selectedQuantity;
+
+        // Calculate the total price based on the selected quantity
+        var totalPrice = originalPrice * selectedQuantity;
+
+        // Update the displayed price
+        var priceElement = document.querySelector(".description h2");
+        priceElement.textContent = "Rs. " + totalPrice.toFixed(2); // Format the price to 2 decimal places
+
+        var priceElement = document.querySelector(".description h2");
+        priceElement.textContent = "Rs. " + totalPrice.toFixed(2); // Format the price to 2 decimal places
+
+        // Update the subtotal value based on the total price
+        var subtotalElement = document.getElementById("subtotal-value");
+        subtotalElement.textContent = "Rs. " + totalPrice.toFixed(2);
+
+        var totalElement = document.getElementById("total-value");
+        totalElement.textContent = "Rs. " + totalPrice.toFixed(2);
+      }
+
+      // Call updateTotalPrice initially to display the initial total price
+      updateTotalPrice();
+
+      function removeItem() {
+        window.location.href = "SkinSerum.html";
+      }
+
+      function applyPromoCode() {
+        var promoInput = document.getElementById("promo-input").value;
+        var totalElement = document.getElementById("total-value");
+
+        // Replace this with your actual promo codes and discounts
+        if (promoInput === "SALVATORE") {
+          var originalTotal = parseFloat(totalElement.textContent.substring(4));
+          // Apply a 10% discount
+          var discount = originalTotal * 0.1;
+          var discountedTotal = originalTotal - discount;
+
+          totalElement.textContent = "Rs. " + discountedTotal.toFixed(2);
+
+          var discountDisplay = document.createElement("p");
+          discountDisplay.textContent = "Discount: Rs. " + discount.toFixed(2);
+          discountDisplay.style.color = "green";
+          totalElement.parentNode.insertBefore(discountDisplay, totalElement);
+
+          alert("Promo code applied successfully!");
+        } else {
+          alert("Invalid promo code. Please try again.");
+        }
+      }
+    </script>
+  </body>
+</html>

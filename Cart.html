@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="Cart.css" />
+    <title>Your Cart</title>
+  </head>
+  <body>
+    <!-- Cart Items -->
+    <div class="container cart">
+      <table>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Subtotal</th>
+        </tr>
+        <tr>
+          <td>
+            <div class="cart-info">
+              <img src="women-images/Sarees (1).jpeg" alt="Traditional Wear" />
+              <div>
+                <p>Saree</p>
+                <span>Price: ₹ 9,999</span> <br />
+                <a href="#">remove</a>
+              </div>
+            </div>
+          </td>
+          <td><input type="number" value="0" min="0" /></td>
+          <td>₹ 9,999</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="cart-info">
+              <img src="women-images/Clothing (10).jpeg" alt="Western Wear" />
+              <div>
+                <p>Clothing</p>
+                <span>Price: ₹ 789</span> <br />
+                <a href="#">remove</a>
+              </div>
+            </div>
+          </td>
+          <td><input type="number" value="0" min="0" /></td>
+          <td>₹ 789</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="cart-info">
+              <img src="women-images/Sports (9).jpeg" alt="Sports Wear" />
+              <div>
+                <p>Sports Top</p>
+                <span>Price: ₹ 999</span> <br />
+                <a href="#">remove</a>
+              </div>
+            </div>
+          </td>
+          <td><input type="number" value="0" min="0" /></td>
+          <td>₹ 999</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="cart-info">
+              <img src="women-images/Jewellery (8).jpeg" alt="Jewellery" />
+              <div>
+                <p>Earring</p>
+                <span>Price: ₹ 51,999</span> <br />
+                <a href="#">remove</a>
+              </div>
+            </div>
+          </td>
+          <td><input type="number" value="0" min="0" /></td>
+          <td>₹ 51,999</td>
+        </tr>
+      </table>
+      <div class="total-price">
+        <table>
+          <tr>
+            <td>Subtotal</td>
+            <td>₹ 63,999</td>
+          </tr>
+          <tr>
+            <td>Tax</td>
+            <td>₹ 105</td>
+          </tr>
+          <tr>
+            <td>Total</td>
+            <td>₹ 64,104</td>
+          </tr>
+        </table>
+        <a href="payment.html" class="checkout btn">Proceed to Pay Now</a>
+      </div>
+    </div>
+  </body>
+</html>
